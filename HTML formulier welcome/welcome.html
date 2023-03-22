@@ -8,14 +8,19 @@
     <title>Welcome HTML</title>
 </head>
 <body>
-    <form id="form">
+    <form id="form" action="welcome.php" method="get">
         <div id="inputContainerAll">
+
             <div id="naamInputContainer">
-                <input id="naamInput" placeholder="Uw naam">
+                <input id="naamInput" placeholder="Uw naam" type="text" name="name">
             </div>
+
             <div id="emailInputContainer">
-                <input id="emailInput" placeholder="Uw email">
+                <input id="emailInput" placeholder="Uw email" type="text" name="email">
             </div>
+
+            <input type="submit" id="submitButton">
+            
         </div>
     </form>
     

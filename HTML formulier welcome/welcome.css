@@ -1,10 +1,15 @@
 #inputContainerAll {
     display: flex;
     margin-top: 3em;
-    margin-left: 45%;
-    flex-direction: column ;
+    flex-direction: column;
+    align-items: center;
 }
 
 #naamInputContainer {
     margin-bottom: 1em;
+}
+
+#submitButton {
+    width: 13em;
+    margin-top: 3em;
 }
