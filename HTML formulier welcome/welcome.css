@@ -1,0 +1,10 @@
+#inputContainerAll {
+    display: flex;
+    margin-top: 3em;
+    margin-left: 45%;
+    flex-direction: column ;
+}
+
+#naamInputContainer {
+    margin-bottom: 1em;
+}
