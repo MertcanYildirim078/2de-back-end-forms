@@ -27,6 +27,10 @@
             else {
             $email = test_input($_POST["email"]);
             }      }
+            
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email";
+}
 
     //   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //     $name = test_input($_POST["name"]);
@@ -41,16 +45,16 @@
       }
 
       ?>
-    <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" >
+    <form id="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <div id="inputContainerAll">
 
             <div id="naamInputContainer">
-                <input id="naamInput" placeholder="Uw naam" type="text" name="name">
+                <input id="naamInput" placeholder="Uw naam" type="text" name="name" value="<?php echo $name;?>">
                 <span class="error">* <?php echo $nameErr;?></span>
             </div>
 
             <div id="emailInputContainer">
-                <input id="emailInput" placeholder="Uw email" type="text" name="email">
+                <input id="emailInput" placeholder="Uw email" type="text" name="email" value="<?php echo $email;?>">
                 <span class="error">* <?php echo $emailErr;?></span>
             </div>
 
@@ -58,12 +62,9 @@
 
             <?php 
     
-                if ($name != "") {
+                if ($name != "" && $email != "" && $emailErr != "Invalid email") {
                     echo "<p id = 'name'> Welcome {$name} </p> <br>";
-                }
-
-                if ($email != "") {
-                echo "<p id = 'email'> Your email address is: {$email}</p> ";
+                    echo "<p id = 'email'> Your email address is: {$email}</p> ";
                 }
 
             ?>
